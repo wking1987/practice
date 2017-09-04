@@ -2,19 +2,17 @@
 include_once './common/Construct.php';
 
 $redisObj = LibConnectClass::getinstance();
+$name = 'name';
+echo '当前记录总数：' . $redisObj -> lSize($name);
 
-//97-122
-for($i=101;$i<=200;$i++)
-{
-    $str = '';
-    for($j=1;$j<=10;$j++)
-    {
-        $index = rand(97,122);
-        $str .= chr($index);
-    }
-    $str .= str_pad($i,2,"0",STR_PAD_LEFT);
-    echo $str;
-    echo "<hr/>";
-    $redisObj -> push('name' , $str);
-}
-//var_dump($redisObj -> pop('name'));
+?>
+<html>
+<head></head>
+<body>
+<br/>
+<a href="http://practice.ttfendou.com/redis/push.php" target="_blank">加记录</a>
+<br/>
+<a href="http://practice.ttfendou.com/redis/extract.php" target="_blank">抽取记录</a>
+
+</body>
+</html>

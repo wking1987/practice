@@ -2,8 +2,9 @@
 include_once './common/Construct.php';
 
 $redisObj = LibConnectClass::getinstance();
+$name = 'name';
 
-$size = $redisObj -> lSize('name');
+$size = $redisObj -> lSize($name);
 if($size == 0)
 {
     echo '没有更多了！';
@@ -11,16 +12,11 @@ if($size == 0)
 }
 var_dump($size);
 echo "<hr/>";
-$index = 1;
+$index = 0;
 $max = 30;
-while($value = $redisObj -> pop('name'))
+while($index < $max &&$value = $redisObj -> pop($name))
 {
     echo $value."<br/>";
-    if($index>=$max)
-    {
-        echo '名额已满！';
-        break;
-    }
     $index++;
 }
 
