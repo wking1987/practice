@@ -1,0 +1,17 @@
+#开启重写
+RewriteEngine Off
+#条件：访问文件是以jpg，png或其他为结尾的；[NC]表示不区分大小写
+RewriteCond %{REQUEST_FILENAME} .*\.(jpg|png|jpeg|gif) [NC]
+#条件：访问的文件不是指定的默认图片，否则会出现重定向死循环
+RewriteCond %{REQUEST_FILENAME} !.*httptest\/111\.png [NC]
+#条件：访问的referer不为空，允许直接用图片连接打开
+RewriteCond %{HTTP_REFERER} !^$ [NC]
+#条件：访问的referer没有www.wk.com
+RewriteCond %{HTTP_REFERER} !www\.wk\.com.*$ [NC]
+#重写规则：所有以图片文件名为结尾的连接，都重定向到制定的小图片上
+RewriteRule .*\.(gif|jpg|jpeg|png)$ http://www.wk.com/httptest/111.png [R,NC,L]
+
+#扩展开启
+ExpiresActive On
+ExpiresByType image/jpeg "access plus 30 days"
+ExpiresByType text/html "access plus 30 days"
