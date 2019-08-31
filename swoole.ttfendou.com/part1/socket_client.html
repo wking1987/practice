@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+前台websocket
+</body>
+<script type="text/javascript">
+    var wsServer = "ws://47.98.121.135:9501";
+    var webSocket = new WebSocket(wsServer);
+    webSocket.onopen = function(event){
+        console.log('链接成功');
+    }
+
+    webSocket.onmessage = function(event){
+        console.log('获取到的信息：');
+        console.log(event.data);
+    }
+    webSocket.onerror = function(event , e){
+        console.log('出错了');
+        console.log(e);
+    }
+    webSocket.onclose = function(event){
+        console.log('链接关闭');
+    }
+</script>
+</html>

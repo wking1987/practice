@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>简单聊天</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="webSocket.js" ></script>
+</head>
+<body>
+<div id="send_msg" class="main box-shadow" style="display: none">
+    <div id="msg" style="width:800px;height:300px;border:1px solid #ff0000;"></div>
+    <br/>
+    <div class="show_send">
+        <input type="text" id="text" />
+        <input type="submit" value="发送数据" onclick="send_msg()" />
+    </div>
+</div>
+<div id="setName" class="box-shadow" style="display: block">
+    <input type="text" id="myname" />
+    <input type="submit" class="setUserName" value="设置昵称" onclick="send_name()">
+</div>
+<div id="myTitle"></div>
+</body>
+</html>
