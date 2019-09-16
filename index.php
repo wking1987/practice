@@ -1,7 +1,7 @@
 <?php
 define('ACCESS' , 'DEV');
-$c = trim($_GET['c']);
-$a = trim($_GET['a']);
+$c = isset($_GET['c']) ? trim($_GET['c']) : '';
+$a = isset($_GET['a']) ? trim($_GET['a']) : '';
 $c = $c == '' ? 'index' : $c;
 $a = $a == '' ? 'index' : $a;
 require_once './common/common.php';

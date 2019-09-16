@@ -9,7 +9,7 @@ class PdoClass
             'dbname' => 'phpwind9',
             'user' => 'root',
             'password' => '',
-            'dsn' => 'mysql:host=localhost;dbname=phpwind9',
+            'dns' => 'mysql:host=localhost;dbname=phpwind9',
         ],
 
     ];
@@ -18,7 +18,7 @@ class PdoClass
     public function __construct()
     {
         try{
-            $this -> dbh = new PDO($this -> config_db['mysql']['dsn'] , $this -> config_db['mysql']['user'] , $this -> config_db['mysql']['password']);
+            $this -> dbh = new PDO($this -> config_db['mysql']['dns'] , $this -> config_db['mysql']['user'] , $this -> config_db['mysql']['password']);
 
         }catch (PDOException $e)
         {
