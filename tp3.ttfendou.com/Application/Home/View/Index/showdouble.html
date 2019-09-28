@@ -1,0 +1,41 @@
+
+<style>
+    table{align-content: center}
+    table td{height:8px;padding:3px;text-align:center;}
+    table td.redin{color:red;}
+    table td.bluein{color:blue;}
+    table td.page a{margin-left:10px;}
+    table td.page span{margin-left:10px;}
+</style>
+<body>
+<table border="1" cellspacing="0">
+    <tr>
+        <td>期数</td>
+        <td>日期</td>
+        <td colspan="33">红球</td>
+        <td colspan="16">蓝球</td>
+        <td>中奖注数</td>
+    </tr>
+    <foreach name='data' item='value' key='key'>
+    <tr>
+        <td>{$value.num}</td>
+        <td>{$value.date}</td>
+        <for start="1" end="34">
+            <td <if condition="in_array($i,$value['red'])">class="redin"</if>>
+                {$i}
+            </td>
+        </for>
+        <for start="1" end="17">
+            <td <if condition="$value.blue eq $i">class="bluein"</if>>
+                {$i}
+            </td>
+        </for>
+        <td>{$value.prize_count}</td>
+    </tr>
+    </foreach>
+    <tr>
+        <td colspan="52" class="page">
+            {$page}
+        </td>
+    </tr>
+</table>

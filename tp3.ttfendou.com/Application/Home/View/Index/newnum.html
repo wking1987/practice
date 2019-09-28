@@ -1,0 +1,40 @@
+<style>
+    #info{margin:10px auto;}
+    #info tr td{width:200px;text-align:center;}
+    .dateyear{width:30px;}
+    .datemonth{width:15px;}
+    .dateday{width:15px;}
+</style>
+<form name="newinfo" method="post" action='{:U("Home/index/getnew")}'>
+    <table border="1" cellspacing="0" id="info">
+        <tr>
+            <td>上期期号</td>
+            <td>{$info.num}</td>
+        </tr>
+        <tr>
+            <td>上期开奖日期</td>
+            <td>{$info.year}年{$info.month}月{$info.day}日</td>
+        </tr>
+        <tr>
+            <td>新一期期号</td>
+            <td><input type="text" value="" name="num" /></td>
+        </tr>
+        <tr>
+            <td>新一期开奖日期</td>
+            <td>
+                <input type="text" value="" name="year" class="dateyear"/>年
+                <input type="text" value="" name="month" class="datemonth" />月
+                <input type="text" value="" name="day" class="dateday" />日
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="reset" value="重置" />
+                <input type="submit" value="提交" id="submit" />
+            </td>
+        </tr>
+    </table>
+</form>
+<script type="text/javascript">
+
+</script>

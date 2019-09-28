@@ -1,0 +1,45 @@
+CREATE TABLE `tp3`.`tp_user`
+(
+`uid` INT(10) NOT NULL AUTO_INCREMENT ,
+`username` VARCHAR(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '' COMMENT '登录用户名' ,
+`password` VARCHAR(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '' COMMENT '登录密码' ,
+`email` VARCHAR(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT '' COMMENT '用户邮箱',
+`name` VARCHAR(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT '' COMMENT '用户名' ,
+`idcard` VARCHAR(20) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT '' COMMENT '身份证' ,
+`sex` ENUM('1','2') NULL DEFAULT '1' COMMENT '0男;1女' ,
+PRIMARY KEY (`uid`)
+)ENGINE = InnoDB CHARSET=utf8 COLLATE utf8_general_ci COMMENT = '用户表';
+
+
+CREATE TABLE `tp3`.`tp_double`
+(
+`num` INT(7) NOT NULL COMMENT '期号',
+`red1` INT(2) NOT NULL DEFAULT 0 COMMENT '红色号码1',
+`red2` INT(2) NOT NULL DEFAULT 0 COMMENT '红色号码2',
+`red3` INT(2) NOT NULL DEFAULT 0 COMMENT '红色号码3',
+`red4` INT(2) NOT NULL DEFAULT 0 COMMENT '红色号码4',
+`red5` INT(2) NOT NULL DEFAULT 0 COMMENT '红色号码5',
+`red6` INT(2) NOT NULL DEFAULT 0 COMMENT '红色号码6',
+`blue` INT(2) NOT NULL DEFAULT 0 COMMENT '蓝色号码',
+`prize_count` INT(2) NOT NULL DEFAULT 0 COMMENT '一等奖注数',
+`year` INT(4) NOT NULL DEFAULT 0 COMMENT '开奖年份',
+`month` INT(2) NOT NULL DEFAULT 0 COMMENT '开奖月份',
+`day` INT(2) NOT NULL DEFAULT 0 COMMENT '开奖日期'
+)ENGINE = InnoDB CHARSET=utf8 COLLATE utf8_general_ci COMMENT = '双色球表';
+
+CREATE TABLE `tp3`.`tp_double`
+(
+`num` INT(7) UNSIGNED NOT NULL DEFAULT '0' ,
+`red1` INT(2) NOT NULL DEFAULT '0' COMMENT '红色号码1',
+`red2` INT(2) NOT NULL DEFAULT '0' COMMENT '红色号码2',
+`red3` INT(2) NOT NULL DEFAULT '0' COMMENT '红色号码3',
+`red4` INT(2) NOT NULL DEFAULT '0' COMMENT '红色号码4',
+`red5` INT(2) NOT NULL DEFAULT '0' COMMENT '红色号码5',
+`red6` INT(2) NOT NULL DEFAULT '0' COMMENT '红色号码6',
+`blue` INT(2) NOT NULL DEFAULT '0' COMMENT '蓝色号码',
+`prize_count` INT(2) NULL DEFAULT '0' COMMENT '一等奖注数',
+`year` INT(4) NULL DEFAULT '0' COMMENT '开奖年份',
+`month` INT(2) NULL DEFAULT '0' COMMENT '开奖月份',
+`day` INT(2) NULL DEFAULT '0' COMMENT '开奖日期',
+UNIQUE `num` (`num`)
+)ENGINE = InnoDB CHARSET=utf8 COLLATE utf8_general_ci COMMENT = '双色球表';
