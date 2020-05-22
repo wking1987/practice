@@ -6,8 +6,8 @@ return [
     'host'      => '127.0.0.1',
     'dbname'    => 'practice',
     'user'      => 'root',
-    'password'  => 'root',
+    'password'  => 'f93fcf6ac7a22004',
     'host_read' => '127.0.0.1',
     'user_read' => 'root',
-    'password_read' => 'root',
+    'password_read' => 'f93fcf6ac7a22004',
 ];

@@ -8,5 +8,5 @@ use Classes\PdoClass;
  */
 class baseModel
 {
-    
+    protected $_table = 'base';
 }
